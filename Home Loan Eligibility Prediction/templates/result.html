@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='celebration.css') }}">
+    <!--CSS file for celebration animation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery for easier animation handling -->
+    <script src="{{ url_for('static', filename='celebration.js') }}"></script>
+    <!-- JavaScript file for celebration animation -->
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-title">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="ADADA Bank Logo" class="logo">
+                <h1>ADADA Bank</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="form-header">
+
+                <h2>Loan Eligibility Result</h2>
+            </div>
+
+            <div class="prediction-text">
+                {% if prediction_text %}
+                <h2>{{ prediction_text }}</h2>
+                {% else %}
+                <h2>No prediction available.</h2>
+                {% endif %}
+                <center>
+                    <img src="{{ url_for('static', filename='party.gif') }}" alt="Party GIF" class="form-image">
+                </center>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ADADA Bank. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
